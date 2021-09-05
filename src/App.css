@@ -79,6 +79,9 @@ body {
 	width: 100%;
 	justify-content: space-around;
 }
+.mappedDiv {
+	color: white;
+}
 
 @media screen and (max-width: 400px) {
 	.header {

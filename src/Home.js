@@ -4,6 +4,7 @@ import talkie from "./Talkie.png";
 import rabbit from "./Rabbit.png";
 import shield from "./Shield.png";
 import DisplayObject from "./DisplayObject";
+import { Link } from "react-router-dom";
 
 function Home() {
 	return (
@@ -11,9 +12,9 @@ function Home() {
 			<div className="container">
 				<div className="header mt-5">
 					<img src={logo} alt="logo"></img>
-					<a href={"/"}>
+					<Link to="/Contact">
 						<h4>contact</h4>
-					</a>
+					</Link>
 				</div>
 				<div className="content mt-4">
 					<div className="row">

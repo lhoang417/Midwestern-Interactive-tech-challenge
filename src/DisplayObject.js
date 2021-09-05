@@ -51,32 +51,41 @@ function DisplayObject() {
 					</button>
 					is clicked.
 				</p>
-				<div className=" objectDiv d-flex col-lg-4 col-md-4 col-sm-12">
-					<p style={!open ? { display: "block" } : { display: "none" }}>
-						<span style={{ color: "#debf79" }}>Object 1</span>
+				<div className="objectDiv d-flex col-lg-4 col-md-4 col-sm-12">
+					<div
+						className="mappedDiv"
+						style={!open ? { display: "block" } : { display: "none" }}
+					>
+						<h3 style={{ color: "#debf79" }}>Object 1</h3>
 						{data.map((e) => (
-							<ul>
+							<ul key={e}>
 								<li>{e}</li>
 							</ul>
 						))}
-					</p>
-					<p style={!open ? { display: "block" } : { display: "none" }}>
-						<span style={{ color: "#debf79" }}>Object 2</span>
+					</div>
+					<div
+						className="mappedDiv"
+						style={!open ? { display: "block" } : { display: "none" }}
+					>
+						<h3 style={{ color: "#debf79" }}>Object 2</h3>
 						{data2.map((e) => (
-							<ul>
+							<ul key={e}>
 								<li>{e}</li>
 							</ul>
 						))}
-					</p>
-					<p style={open ? { display: "block" } : { display: "none" }}>
-						<span style={{ color: "#debf79" }}>Result Object</span>
+					</div>
+					<div
+						className="mappedDiv"
+						style={open ? { display: "block" } : { display: "none" }}
+					>
+						<h3 style={{ color: "#debf79" }}>Result Object</h3>
 						{open &&
 							finalArray.map((e) => (
-								<ul>
+								<ul key={e}>
 									<li>{e}</li>
 								</ul>
 							))}
-					</p>
+					</div>
 				</div>
 			</div>
 		</div>
