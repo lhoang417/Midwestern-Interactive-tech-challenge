@@ -5,11 +5,13 @@ import DisplayObject from "../components/DisplayObject";
 import { Link } from "react-router-dom";
 
 function Home() {
-	const url = "https://api.mwi.dev/content/home";
+	const url = "https://api.mwi.dev/content/home/";
 	const [info, setInfo] = useState([]);
 
 	useEffect(() => {
-		axios.get(url).then((res) => setInfo(res.data["data"]));
+		axios.get(url).then((res) => {
+			setInfo(res.data["data"]);
+		});
 	}, []);
 
 	console.log(info);
@@ -30,7 +32,10 @@ function Home() {
 								className="card col-lg-4 col-md-4 col-sm-12 p-5 text-start"
 							>
 								<div className="imgDiv" style={{ height: "120px" }}>
-									<img src={talkie} alt="talkie"></img>
+									<img
+										src={`https://raw.githubusercontent.com/lhoang417/Midwestern-Interactive-tech-challenge/main/src/images/${ele.id}.png?raw=true`}
+										alt="talkie"
+									></img>
 								</div>
 								<h1 className="pb-3 text-center">{ele.title}</h1>
 								<p>{ele.content} </p>
@@ -42,55 +47,15 @@ function Home() {
 										color: "white",
 									}}
 								>
-									<a href="/">Learn More</a>
+									<Link to={`/content/${ele.id}`}>Learn More</Link>
 								</div>
 							</div>
 						))}
-						{/* <div className="card col-lg-4 col-md-4 col-sm-12 p-5 text-start">
-							<div className="imgDiv" style={{ height: "120px" }}>
-								<img src={rabbit} alt="rabbit"></img>
-							</div>
-							<h1 className="pb-3">Heading Two</h1>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna{" "}
-							</p>
-							<div
-								className="learn text-center px-4 py-2 m-auto"
-								style={{
-									backgroundColor: "#DEBF79",
-									width: "fit-content",
-									color: "white",
-								}}
-							>
-								<a href="/">Learn More</a>
-							</div>
-						</div>
-						<div className="card col-lg-4 col-md-4 col-sm-12 p-5 text-start">
-							<div className="imgDiv" style={{ height: "120px" }}>
-								<img src={shield} alt="shield"></img>
-							</div>
-							<h1 className="pb-3">Heading Two</h1>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna{" "}
-							</p>
-							<div
-								className="learn text-center px-4 py-2 m-auto"
-								style={{
-									backgroundColor: "#DEBF79",
-									width: "fit-content",
-									color: "white",
-								}}
-							>
-								<a href="/">Learn More</a>
-							</div>
-						</div> */}
 					</div>
 				</div>
 				<div className="bottom row mt-5">
 					<h1 className="pb-4">
-						<span className="bottomSpan">Heading</span>&nbsp;One
+						<span className="bottomSpan">Javascript</span>&nbsp;Puzzle
 					</h1>
 					<DisplayObject />
 				</div>

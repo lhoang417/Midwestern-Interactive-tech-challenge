@@ -58,7 +58,7 @@ function DisplayObject() {
 					>
 						<h3 style={{ color: "#debf79" }}>Object 1</h3>
 						{data.map((e) => (
-							<ul key={e}>
+							<ul className="row" key={e}>
 								<li>{e}</li>
 							</ul>
 						))}
@@ -69,7 +69,7 @@ function DisplayObject() {
 					>
 						<h3 style={{ color: "#debf79" }}>Object 2</h3>
 						{data2.map((e) => (
-							<ul key={e}>
+							<ul className="row" key={e}>
 								<li>{e}</li>
 							</ul>
 						))}
@@ -81,7 +81,7 @@ function DisplayObject() {
 						<h3 style={{ color: "#debf79" }}>Result Object</h3>
 						{open &&
 							finalArray.map((e) => (
-								<ul key={e}>
+								<ul className="row" key={e}>
 									<li>{e}</li>
 								</ul>
 							))}
