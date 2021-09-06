@@ -12,6 +12,9 @@ body {
 	text-decoration: none;
 	color: #debf79;
 }
+.header2 a:hover {
+	color: #debf79;
+}
 
 .contactCon {
 	display: flex;
