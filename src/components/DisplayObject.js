@@ -65,14 +65,14 @@ function DisplayObject() {
 					</button>
 					is clicked.
 				</p>
-				<div className="objectDiv d-flex col-lg-4 col-md-4 col-sm-12">
+				<div className="objectDiv d-flex col-lg-4 col-md-4 col-sm-12 px-2">
 					<div
 						className="mappedDiv"
 						style={!open ? { display: "block" } : { display: "none" }}
 					>
 						<h3 style={{ color: "#debf79" }}>Object 1</h3>
 						<input
-							style={{ border: "none" }}
+							style={{ border: "none", width: "10em" }}
 							className="rounded-3 ps-2 py-1 mb-2"
 							placeholder="Add name..."
 							onKeyPress={addName}
@@ -93,7 +93,7 @@ function DisplayObject() {
 					>
 						<h3 style={{ color: "#debf79" }}>Object 2</h3>
 						<input
-							style={{ border: "none" }}
+							style={{ border: "none", width: "10em" }}
 							className="rounded-3 ps-2 py-1 mb-2"
 							placeholder="Add name..."
 							onKeyPress={addName2}
