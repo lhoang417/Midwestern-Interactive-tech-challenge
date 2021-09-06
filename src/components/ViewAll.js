@@ -2,10 +2,15 @@ import React from "react";
 import logo from "../images/Logo.png";
 import { Link } from "react-router-dom";
 import { useEasybase } from "easybase-react";
+import { useState } from "react/cjs/react.development";
 
 function ViewAll() {
 	const { db, useReturn } = useEasybase();
+	const [nameToDelete, setNameToDelete] = useState("");
 	const { frame } = useReturn(() => db("CONTACTINFO").return(), []);
+	const handleDelete = async (e) => {
+		await db("CONTACTINFO").delete().where({ firstname: nameToDelete }).one();
+	};
 
 	return (
 		<div>
@@ -17,11 +22,11 @@ function ViewAll() {
 					</Link>
 				</div>
 				<div className="content mt-4">
-					<div className="row">
+					<div className="row d-flex justify-content-evenly">
 						{frame.map((ele, i) => (
 							<div
 								key={i}
-								className="card col-lg-4 col-md-4 col-sm-12 p-5 text-start"
+								className="card col-lg-4 col-md-4 col-sm-12 p-5 text-start "
 							>
 								<div className="imgForForm row" style={{ height: "100px" }}>
 									<img src={logo} alt="logo"></img>
@@ -38,6 +43,15 @@ function ViewAll() {
 								<p className="pb-3 text-center">
 									{ele.message ? ele.message : "null"}
 								</p>
+								<button
+									className="deleteBtn"
+									onMouseOver={() => {
+										setNameToDelete(ele.firstname);
+									}}
+									onClick={handleDelete}
+								>
+									Delete
+								</button>
 							</div>
 						))}
 					</div>

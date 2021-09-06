@@ -3,6 +3,8 @@ import React, { useState } from "react";
 function DisplayObject() {
 	const [open, setOpen] = useState(false);
 	const [finalArray, setFinalArray] = useState([]);
+	const [name, setName] = useState("");
+	const [name2, setName2] = useState("");
 	const [data, setData] = useState([
 		"Matt Johnson",
 		"Bart Paden",
@@ -22,6 +24,18 @@ function DisplayObject() {
 	}
 	for (let i = 0; i < data2.length; i++) {
 		totalArr.push(data2[i]);
+	}
+	function addName(e) {
+		if (e.key === "Enter" && name.length !== 0) {
+			data.push(name);
+			setName("");
+		}
+	}
+	function addName2(e) {
+		if (e.key === "Enter" && name2.length !== 0) {
+			data2.push(name2);
+			setName2("");
+		}
 	}
 
 	function removeDups() {
@@ -57,6 +71,16 @@ function DisplayObject() {
 						style={!open ? { display: "block" } : { display: "none" }}
 					>
 						<h3 style={{ color: "#debf79" }}>Object 1</h3>
+						<input
+							style={{ border: "none" }}
+							className="rounded-3 ps-2 py-1 mb-2"
+							placeholder="Add name..."
+							onKeyPress={addName}
+							onChange={(e) => {
+								setName(e.target.value);
+							}}
+							value={name}
+						/>
 						{data.map((e) => (
 							<ul className="row" key={e}>
 								<li>{e}</li>
@@ -68,6 +92,16 @@ function DisplayObject() {
 						style={!open ? { display: "block" } : { display: "none" }}
 					>
 						<h3 style={{ color: "#debf79" }}>Object 2</h3>
+						<input
+							style={{ border: "none" }}
+							className="rounded-3 ps-2 py-1 mb-2"
+							placeholder="Add name..."
+							onKeyPress={addName2}
+							onChange={(e) => {
+								setName2(e.target.value);
+							}}
+							value={name2}
+						/>
 						{data2.map((e) => (
 							<ul className="row" key={e}>
 								<li>{e}</li>

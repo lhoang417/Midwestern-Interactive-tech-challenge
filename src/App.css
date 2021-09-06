@@ -30,6 +30,14 @@ body {
 	border-radius: 12px;
 	margin-bottom: 3em;
 }
+.deleteBtn {
+	width: 8em;
+	margin: auto;
+	border-radius: 7px;
+	color: white;
+	background: #222222;
+	border: none;
+}
 
 .row {
 	display: flex;
