@@ -6,7 +6,7 @@ import "./Contact.css";
 function Contact() {
 	return (
 		<div className="contactPage">
-			<div className="header2 d-flex mt-5">
+			<div className="container header2 d-flex mt-5">
 				<img src={logo} alt="logo"></img>
 				<Link to="/">
 					<h4>home</h4>
